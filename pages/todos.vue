@@ -1,5 +1,6 @@
 <template>
   <div>
+    {{ todos }}
     <div class="form">
       <form v-on:submit.prevent="add">
         <input v-model="name">
@@ -28,6 +29,13 @@
       add() {
         this.$store.dispatch('todos/add', this.name)
         this.name = ''
+      }
+    },
+    // ストアのtodosを返すメソッドを定義
+    // todosのデータを加工するためcomputedを使用
+    computed: {
+      todos() {
+        return this.$store.state.todos.todos
       }
     }
   }
