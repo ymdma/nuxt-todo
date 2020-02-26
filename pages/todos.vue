@@ -56,7 +56,8 @@
     // todosのデータを加工するためcomputedを使用
     computed: {
       todos() {
-        return this.$store.state.todos.todos
+        // return this.$store.state.todos.todos
+        return this.$store.getters['todos/orderdTodos']
       }
     },
     filters: {
