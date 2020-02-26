@@ -3,17 +3,10 @@
     <!-- {{ todos }} -->
     <ul>
       <li v-for="todo in todos" :key="todo.id">
-
-        <!--
-        {{ todo.created }} -->
-
-        <input 
-        type="checkbox" 
-        v-bind:checked="todo.done" 
-        @change="toggle(todo)">
-
-        {{ todo.name }}
-        {{ todo.done }}
+        <input type="checkbox" v-bind:checked="todo.done" @change="toggle(todo)">
+        <span v-bind:class="{ done: todo.done }">
+          {{ todo.name }} {{ todo.created.toDate() }}
+        </span>
         <button v-on:click="remove(todo.id)">Del</button>
       </li>
     </ul>
@@ -66,5 +59,49 @@
 
 
 <style>
+
+ul{
+  margin: 20px;
+  list-style:none;
+}
+li{
+  margin:0 0 10px 0;
+}
+li > span.done {
+  text-decoration: line-through;
+  color:#777777;
+}
+li button{
+  height: 20px;
+  line-height: 20px;
+  position: relative;
+  top: -1.5px;
+  background: pink;
+}
+li input{
+  margin: 0 10px 0 0;
+}
+.form{
+  margin: 20px 0 20px 90px;
+}
+
+.form input{
+  width: 200px;
+  height: 24px;
+  line-height: 24px;
+  padding: 2px 10px 2px 10px;
+  background: #ccc;
+  border:solid #333 0.5px;
+  color: #fff;
+}
+.form button{
+  width: 50px;
+  height: 24px;
+  padding: 2px;
+  margin: 0 0 0 10px;
+  background: skyblue;
+  border:solid #333 0.5px;
+
+}
 
 </style>
