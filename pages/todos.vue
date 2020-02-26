@@ -5,7 +5,7 @@
       <li v-for="todo in todos" :key="todo.id">
         <input type="checkbox" v-bind:checked="todo.done" @change="toggle(todo)">
         <span v-bind:class="{ done: todo.done }">
-          {{ todo.name }} {{ todo.created.toDate() }}
+          {{ todo.name }} | {{ todo.created.toDate() | dateFilter }}
         </span>
         <button v-on:click="remove(todo.id)">Del</button>
       </li>
@@ -20,6 +20,8 @@
 </template>
 
 <script>
+  import moment from 'moment'
+
   // data→新規登録されるtodoを一時的に格納(name:タスク名、done:完了/未完了)
   export default {
     data: function(){
@@ -52,6 +54,11 @@
     computed: {
       todos() {
         return this.$store.state.todos.todos
+      }
+    },
+    filters: {
+      dateFilter: function(date){
+        return moment(date).format('YYYY/MM/DD HH:mm:ss')
       }
     }
   }
@@ -101,7 +108,6 @@ li input{
   margin: 0 0 0 10px;
   background: skyblue;
   border:solid #333 0.5px;
-
 }
 
 </style>
