@@ -2,12 +2,15 @@
   <div>
     <!-- {{ todos }} -->
     <ul>
+      <!-- v-if データがあるときだけ、描画する → 処理を後に回す効果ということ?-->
       <li v-for="todo in todos" :key="todo.id">
-        <input type="checkbox" v-bind:checked="todo.done" @change="toggle(todo)">
-        <span v-bind:class="{ done: todo.done }">
-          {{ todo.name }} | {{ todo.created.toDate() | dateFilter }}
-        </span>
-        <button v-on:click="remove(todo.id)">Del</button>
+        <div v-if="todo.created">
+          <input type="checkbox" v-bind:checked="todo.done" @change="toggle(todo)">
+          <span v-bind:class="{ done: todo.done }">
+            {{ todo.name }} | {{ todo.created.toDate() | dateFilter }}
+          </span>
+          <button v-on:click="remove(todo.id)">Del</button>
+        </div>
       </li>
     </ul>
     <div class="form">
@@ -74,7 +77,7 @@ ul{
 li{
   margin:0 0 10px 0;
 }
-li > span.done {
+li > div span.done {
   text-decoration: line-through;
   color:#777777;
 }
