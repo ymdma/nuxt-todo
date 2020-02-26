@@ -28,7 +28,7 @@ Vue.js 、Nuxt、 また、関連するライブラリや、Firebaseなどの学
 
       野望として、「自分が使いたくて作りたい」と以前から思っていた、階層式（多次元式）のメモアプリを開発したいと思っている。
 
-
+![todo app](https://gyazo.com/a2d8ec5edc3ceb19fd358b3692957e9d "todo app")
 
 #
 
