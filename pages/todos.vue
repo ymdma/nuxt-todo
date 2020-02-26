@@ -138,7 +138,7 @@ h2{
   margin: 0 0 0 20px;
   position: absolute;
   top: 18px;
-  left: 32vw;
+  left: calc(50vw - 155px);
 }
 
 .form input{
