@@ -1,29 +1,14 @@
 <template>
   <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        nuxt-todo
-      </h1>
-      <h2 class="subtitle">
-        My bee&#39;s knees Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+    <h1 class="title">
+      todo app
+    </h1>
+    <div class="link">
+      <router-link to="/todos">
+        <p>
+          todo app を使ってみる
+        </p>
+      </router-link>
     </div>
   </div>
 </template>
@@ -43,6 +28,7 @@ export default {
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -53,20 +39,41 @@ export default {
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
   font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
+  font-size: 48px;
+  color: #305984;
   letter-spacing: 1px;
 }
 
-.subtitle {
+/* .subtitle {
   font-weight: 300;
   font-size: 42px;
   color: #526488;
   word-spacing: 5px;
   padding-bottom: 15px;
+} */
+
+.link {
+  margin: 40px 0 40px 0 ;
+  padding: 5px;
+
+}
+.link a:hover{
+  animation: 1200ms text-color-change linear;
+  font-weight: 600;
+}
+@keyframes text-color-change {
+  0%{
+    color: #333333;
+  }
+  40%{
+    color: #1e84f2;
+  }
+  100%{
+    color: #333333;
+  }
+}
+.link a:active {
+  font-style: italic;
 }
 
-.links {
-  padding-top: 15px;
-}
 </style>

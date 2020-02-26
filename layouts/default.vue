@@ -9,6 +9,7 @@ html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
+  color: #333;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -23,7 +24,12 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
-
+a,
+a:visited,
+a:link{
+  color: #333;
+  text-decoration: none;
+}
 .button--green {
   display: inline-block;
   border-radius: 4px;
@@ -52,4 +58,5 @@ html {
   color: #fff;
   background-color: #35495e;
 }
+
 </style>
