@@ -145,6 +145,10 @@
     button:hover{
       background: rgb(50, 197, 255);
     }
+    button:active{
+      background: rgb(50, 197, 255);
+      opacity: 0.65;
+    }
 
   }
 }
@@ -159,6 +163,8 @@ ul{
     > div span.done {
       text-decoration: line-through;
       color:#777777;
+      opacity: 0.6;
+      font-weight: 300;
     }
     button{
       height: 22px;
@@ -171,7 +177,11 @@ ul{
       text-align: center;
     }
     button:hover{
-      background: rgb(255, 134, 154);
+      background: rgb(255, 167, 181);
+    }
+    button:active{
+      background: rgb(255, 167, 188);
+      opacity: 0.65;
     }
     input{
       margin: 0 0px 0 0;
