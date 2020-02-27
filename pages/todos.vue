@@ -82,7 +82,7 @@
 </script>
 
 
-<style>
+<style lang="scss">
 .todos-container{
   margin: 0 auto;
   min-height: 100vh;
@@ -92,33 +92,7 @@
   align-items: center;
   /* text-align: center; */
 }
-ul{
-  margin: 80px 0 0 0;
-  list-style:none;
-}
-li{
-  margin:0 0 15px 0;
-}
-li > div span.done {
-  text-decoration: line-through;
-  color:#777777;
-}
-li button{
-  height: 22px;
-  line-height: 20px;
-  margin: 0 0 0 10px;
-  position: relative;
-  top: -1.5px;
-  background: pink;
-  cursor: pointer;
-  text-align: center;
-}
-li button:hover{
-  background: rgb(255, 134, 154);
-}
-li input{
-  margin: 0 0px 0 0;
-}
+
 .todos-header{
   width: 100%;
   height: 60px;
@@ -127,57 +101,96 @@ li input{
   top: 0;
   background: #d2d2d2;
   z-index: 1;
-}
-h2{
-  margin: 12px 0 0 40px;
-  line-height: 30px;
-  font-size: 30px;
-}
-.form{
-  width: fit-content;
-  margin: 0 0 0 20px;
-  position: absolute;
-  top: 18px;
-  left: calc(50vw - 155px);
+
+  h2{
+    margin: 12px 0 0 40px;
+    line-height: 30px;
+    font-size: 30px;
+  }
+
+  .form{
+    width: fit-content;
+    margin: 0 0 0 20px;
+    position: absolute;
+    top: 18px;
+    left: calc(50vw - 155px);
+
+    input{
+      width: 200px;
+      height: 24px;
+      line-height: 24px;
+      padding: 2px 8px 2px 8px;
+      background: #7fb5d7;
+      border:solid #333 0.5px;
+      color: #000;
+      font-size: 18px;
+    }
+    input:hover{
+      background: #87c6ed;
+    }
+    input:focus{
+      background: #c3edf9;
+    }
+
+    button{
+      width: 50px;
+      height: 24px;
+      padding: 2px;
+      margin: 0 0 0 10px;
+      background: skyblue;
+      border:solid #333 0.5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover{
+      background: rgb(50, 197, 255);
+    }
+
+  }
 }
 
-.form input{
-  width: 200px;
-  height: 24px;
-  line-height: 24px;
-  padding: 2px 8px 2px 8px;
-  background: #7fb5d7;
-  border:solid #333 0.5px;
-  color: #000;
-  font-size: 18px;
+
+ul{
+  margin: 80px 0 0 0;
+  list-style:none;
+  li{
+    margin:0 0 15px 0;
+
+    > div span.done {
+      text-decoration: line-through;
+      color:#777777;
+    }
+    button{
+      height: 22px;
+      line-height: 20px;
+      margin: 0 0 0 10px;
+      position: relative;
+      top: -1.5px;
+      background: pink;
+      cursor: pointer;
+      text-align: center;
+    }
+    button:hover{
+      background: rgb(255, 134, 154);
+    }
+    input{
+      margin: 0 0px 0 0;
+    }
+  }
 }
-.form input:hover{
-  background: #87c6ed;
-}
-.form input:focus{
-  background: #c3edf9;
-}
-.form button{
-  width: 50px;
-  height: 24px;
-  padding: 2px;
-  margin: 0 0 0 10px;
-  background: skyblue;
-  border:solid #333 0.5px;
-  font-size: 16px;
-  cursor: pointer;
-}
-.form button:hover{
-  background: rgb(50, 197, 255);
-}
+
 .link {
   margin: 40px 0 40px 0 ;
   padding: 5px;
 
-}
-.link a:hover{
-  animation: 1200ms text-color-change linear;
-  font-weight: 600;
+  a:hover{
+    animation: 1200ms text-color-change linear;
+    font-weight: 600;
+  }
+  a:active {
+    font-style: italic;
+  }
+
 }
 @keyframes text-color-change {
   0%{
@@ -190,8 +203,6 @@ h2{
     color: #333333;
   }
 }
-.link a:active {
-  font-style: italic;
-}
+
 
 </style>

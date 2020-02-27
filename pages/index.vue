@@ -23,7 +23,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .container {
   margin: 0 auto;
   min-height: 100vh;
@@ -44,23 +44,20 @@ export default {
   letter-spacing: 1px;
 }
 
-/* .subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-} */
 
 .link {
   margin: 40px 0 40px 0 ;
   padding: 5px;
 
+  a:hover{
+    animation: 1200ms text-color-change linear;
+    font-weight: 600;
+  }
+  a:active {
+    font-style: italic;
+  }
 }
-.link a:hover{
-  animation: 1200ms text-color-change linear;
-  font-weight: 600;
-}
+
 @keyframes text-color-change {
   0%{
     color: #333333;
@@ -72,8 +69,6 @@ export default {
     color: #333333;
   }
 }
-.link a:active {
-  font-style: italic;
-}
+
 
 </style>
